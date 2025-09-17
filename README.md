@@ -65,7 +65,7 @@ _(À insérer : capture d’écran du site ou GIF du slider Avant/Après)_
 
 ## 📞 Contact
 
-📧 contact@r2s-sas.fr  
+📧 support@r2s-sas.fr  
 🌐 [r2s-sas.fr](https://r2s-sas.fr)  
 
 ---
