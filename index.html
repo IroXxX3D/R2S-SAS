@@ -145,11 +145,26 @@
       border: 1px solid #e5e5e5;
       background: white;
     }
-  </style>
+  
+/* --- Fix textarea visibility on some hosts (force display) --- */
+#annonce textarea#ad-output,
+#contact textarea#c-msg{
+  display:block !important;
+  min-height:14rem;
+  width:100%;
+  box-sizing:border-box;
+  border:1px solid #e5e7eb;
+  border-radius:1rem;
+  padding:.75rem;
+  background:#fff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+</style>
 </head>
 
 <body class="bg-neutral-50 text-neutral-900">
-  <header class="sticky top-0 z-40 border-b border-neutral-200 backdrop-blur">
+  <header class="sticky top-0 z-40 border-b border-neutral-200 bg-white/90 backdrop-blur">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
       <a href="#" class="flex items-center gap-3">
 
@@ -180,7 +195,7 @@
     </div>
     <div id="backdrop" class="backdrop fixed inset-0 z-40 bg-black/30 pointer-events-none md:hidden"></div>
     <aside id="mobileNav"
-      class="mobile-panel fixed inset-y-0 right-0 z-50 w-11/12 max-w-sm border-l border-neutral-200  shadow-x1 md:hidden">
+      class="mobile-panel fixed inset-y-0 right-0 z-50 w-11/12 max-w-sm border-l border-neutral-200 bg-white md:hidden">
       <div class="flex items-center justify-between px-4 py-3 border-b border-neutral-200">
         <div class="font-semibold">Menu</div>
         <button id="closeMenu"
@@ -510,7 +525,7 @@
             class="inline-flex items-center gap-2 rounded-2xl px-5 py-3 text-base font-medium shadow-sm transition hover:shadow-md bg-black text-white">Générer</button>
         </div>
       </div>
-      <div class="rounded-2x1 border border-neutral-200 bg-white p-5 sm:p-6 shadow-sm">
+      <div class="rounded-2xl border border-neutral-200 bg-white p-5 sm:p-6 shadow-sm">
         <div class="mb-2 text-sm text-neutral-500">Aperçu du texte</div>
         <textarea id="ad-output"
           class="h-56 w-full resize-none rounded-xl border border-neutral-200 p-3 font-mono text-sm"
@@ -597,7 +612,10 @@
     </div>
   </footer>
 
-<script> const $ = (id) => document.getElementById(id); document.querySelectorAll('[data-scroll]').forEach(function (btn) { btn.addEventListener('click', function () { var id = btn.getAttribute('data-scroll'); var el = document.querySelector(id); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); closeMobileNav(); }); }); var body = document.body; var hamburger = $('hamburger'); var hamburgerPath = $('hamburgerPath'); var mobileNav = $('mobileNav'); var backdrop = $('backdrop'); var closeMenu = $('closeMenu'); function openMobileNav() { mobileNav.classList.add('open'); backdrop.classList.add('open'); backdrop.classList.remove('pointer-events-none'); body.classList.add('no-scroll'); hamburger.setAttribute('aria-expanded', 'true'); hamburgerPath.setAttribute('d', 'M6 6l12 12M18 6l-12 12'); } function closeMobileNav() { mobileNav.classList.remove('open'); backdrop.classList.remove('open'); backdrop.classList.add('pointer-events-none'); body.classList.remove('no-scroll'); hamburger.setAttribute('aria-expanded', 'false'); hamburgerPath.setAttribute('d', 'M3 6h18M3 12h18M3 18h18'); } hamburger.addEventListener('click', function () { var expanded = hamburger.getAttribute('aria-expanded') === 'true'; expanded ? closeMobileNav() : openMobileNav(); }); backdrop.addEventListener('click', closeMobileNav); closeMenu.addEventListener('click', closeMobileNav); window.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMobileNav(); }); var stage = $('xfadeStage'); var range = $('xfadeRange'); var pctLabel = $('xfadePct'); function updateMix(p) { stage.style.setProperty('--mix', (p / 100).toString()); pctLabel.textContent = Math.round(p) + '%'; } if (range) { range.addEventListener('input', function () { updateMix(range.value); }); updateMix(range.value); } var dragging = false; function posToPercent(evt) { var rect = stage.getBoundingClientRect(); var clientX = (evt.touches ? evt.touches[0].clientX : evt.clientX); var x = clientX - rect.left; return Math.min(100, Math.max(0, (x / rect.width) * 100)); } ['pointerdown', 'mousedown', 'touchstart'].forEach(function (ev) { stage.addEventListener(ev, function (e) { dragging = true; var p = posToPercent(e); range.value = p; updateMix(p); }); }); ['pointermove', 'mousemove', 'touchmove'].forEach(function (ev) { stage.addEventListener(ev, function (e) { if (!dragging) return; var p = posToPercent(e); range.value = p; updateMix(p); e.preventDefault(); }); }); ['pointerup', 'mouseup', 'mouseleave', 'touchend', 'touchcancel'].forEach(function (ev) { stage.addEventListener(ev, function () { dragging = false; }); }); stage.addEventListener('mousemove', function (e) { if (dragging) return; var p = posToPercent(e); updateMix(p); }); stage.addEventListener('mouseleave', function () { updateMix(range.value); }); function genText() { function g(id) { return $(id).value; } var marque = g('f-marque') || 'Marque'; var modele = g('f-modele') || 'Modèle'; var annee = g('f-annee') ? '(' + g('f-annee') + ')' : ''; var km = g('f-km') ? (g('f-km') + ' km') : 'Kilométrage à préciser'; var motor = g('f-motor') || 'à préciser'; var atouts = g('f-atouts'); var lieu = g('f-lieu'); var parts = []; parts.push((marque + ' ' + modele + ' ' + annee).trim()); parts.push('Moteur: ' + motor + '. ' + km + '.'); if (atouts) parts.push('Points forts: ' + atouts + '.'); parts.push('Véhicule préparé et valorisé par le pack 48h AutoBoost: nettoyage complet, corrections locales, shooting photo pro, annonce structurée.'); parts.push('Dossier photos HD disponible et vidéo de présentation sur demande (option drone).\n\nEssai et visite possibles' + (lieu ? (' à ' + lieu) : '') + '. Prix étudié selon marché. Contact par message.'); return parts.join('\n'); } $('btn-generate').addEventListener('click', function () { var t = genText(); $('ad-output').value = t; var mail = 'mailto:?subject=' + encodeURIComponent("Texte d'annonce – AutoBoost 48h") + '&body=' + encodeURIComponent(t); $('mailto-link').setAttribute('href', mail); }); $('btn-copy').addEventListener('click', function () { navigator.clipboard.writeText($('ad-output').value); }); function contactMailto() { var name = $('c-name').value; var email = $('c-email').value; var msg = $('c-msg').value; var mail = 'mailto:alban.meunier29@gmail.com?subject=' + encodeURIComponent('Demande de devis – R2S SAS') + '&body=' + encodeURIComponent('Nom: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + msg); $('c-mailto').setAttribute('href', mail); } ['c-name', 'c-email', 'c-msg'].forEach(function (id) { $(id).addEventListener('input', contactMailto); }); contactMailto(); </script>
+<script> const $ = (id) => document.getElementById(id); document.querySelectorAll('[data-scroll]').forEach(function (btn) { btn.addEventListener('click', function () { var id = btn.getAttribute('data-scroll'); var el = document.querySelector(id); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); closeMobileNav(); }); }); var body = document.body; var hamburger = $('hamburger'); var hamburgerPath = $('hamburgerPath'); var mobileNav = $('mobileNav'); var backdrop = $('backdrop'); var closeMenu = $('closeMenu'); function openMobileNav() { mobileNav.classList.add('open'); backdrop.classList.add('open'); backdrop.classList.remove('pointer-events-none'); body.classList.add('no-scroll'); hamburger.setAttribute('aria-expanded', 'true'); hamburgerPath.setAttribute('d', 'M6 6l12 12M18 6l-12 12'); } function closeMobileNav() { mobileNav.classList.remove('open'); backdrop.classList.remove('open'); backdrop.classList.add('pointer-events-none'); body.classList.remove('no-scroll'); hamburger.setAttribute('aria-expanded', 'false'); hamburgerPath.setAttribute('d', 'M3 6h18M3 12h18M3 18h18'); } hamburger.addEventListener('click', function () { var expanded = hamburger.getAttribute('aria-expanded') === 'true'; expanded ? closeMobileNav() : openMobileNav(); }); backdrop.addEventListener('click', closeMobileNav); closeMenu.addEventListener('click', closeMobileNav); window.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMobileNav(); }); var stage=$('xfadeStage'); var range=$('xfadeRange'); var pctLabel=$('xfadePct');
+function updateMix(p){ stage.style.setProperty('--mix',(p/100).toString()); pctLabel.textContent=Math.round(p)+'%'; }
+if(range){ range.addEventListener('input', function(){ updateMix(range.value); }); updateMix(range.value); }
+function genText() { function g(id) { return $(id).value; } var marque = g('f-marque') || 'Marque'; var modele = g('f-modele') || 'Modèle'; var annee = g('f-annee') ? '(' + g('f-annee') + ')' : ''; var km = g('f-km') ? (g('f-km') + ' km') : 'Kilométrage à préciser'; var motor = g('f-motor') || 'à préciser'; var atouts = g('f-atouts'); var lieu = g('f-lieu'); var parts = []; parts.push((marque + ' ' + modele + ' ' + annee).trim()); parts.push('Moteur: ' + motor + '. ' + km + '.'); if (atouts) parts.push('Points forts: ' + atouts + '.'); parts.push('Véhicule préparé et valorisé par le pack 48h AutoBoost: nettoyage complet, corrections locales, shooting photo pro, annonce structurée.'); parts.push('Dossier photos HD disponible et vidéo de présentation sur demande (option drone).\n\nEssai et visite possibles' + (lieu ? (' à ' + lieu) : '') + '. Prix étudié selon marché. Contact par message.'); return parts.join('\n'); } $('btn-generate').addEventListener('click', function () { var t = genText(); $('ad-output').value = t; var mail = 'mailto:?subject=' + encodeURIComponent("Texte d'annonce – AutoBoost 48h") + '&body=' + encodeURIComponent(t); $('mailto-link').setAttribute('href', mail); }); $('btn-copy').addEventListener('click', function () { navigator.clipboard.writeText($('ad-output').value); }); function contactMailto() { var name = $('c-name').value; var email = $('c-email').value; var msg = $('c-msg').value; var mail = 'mailto:alban.meunier29@gmail.com?subject=' + encodeURIComponent('Demande de devis – R2S SAS') + '&body=' + encodeURIComponent('Nom: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + msg); $('c-mailto').setAttribute('href', mail); } ['c-name', 'c-email', 'c-msg'].forEach(function (id) { $(id).addEventListener('input', contactMailto); }); contactMailto(); </script>
 
 </body>
 
