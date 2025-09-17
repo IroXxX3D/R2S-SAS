@@ -1,45 +1,75 @@
-### Step 1: Create a GitHub Account
-If you don’t already have a GitHub account, go to [GitHub](https://github.com/) and sign up for one.
+# 🚗 R2S — Ready to Sell
 
-### Step 2: Create a New Repository
-1. Log in to your GitHub account.
-2. Click on the "+" icon in the upper right corner and select "New repository."
-3. Name your repository (e.g., `my-html-project`). You can also add a description if you want.
-4. Choose the repository to be either public or private (public is recommended for GitHub Pages).
-5. Initialize the repository with a README file (optional).
-6. Click on "Create repository."
+**R2S SAS** propose une solution innovante pour accélérer la mise en vente des véhicules : **remise en état visuel, shooting photo/vidéo professionnel et annonce standardisée** — le tout en **48h chrono**.  
 
-### Step 3: Upload Your HTML Files
-1. Go to your newly created repository.
-2. Click on the "Add file" button and select "Upload files."
-3. Drag and drop your HTML files (and any other assets like CSS, JavaScript, images, etc.) into the upload area or click "choose your files" to select them.
-4. Once your files are uploaded, scroll down and click on "Commit changes."
+Notre objectif : **valoriser les véhicules rapidement et efficacement**, pour maximiser la confiance des acheteurs et réduire les délais de vente.
 
-### Step 4: Enable GitHub Pages
-1. Go to the "Settings" tab of your repository.
-2. Scroll down to the "Pages" section (you may need to click on "Code and automation" to find it).
-3. Under "Source," select the branch you want to use (usually `main` or `master`) and the folder (usually `/ (root)`).
-4. Click "Save."
+---
 
-### Step 5: Access Your Hosted Site
-After a few moments, GitHub will provide you with a URL where your site is hosted. It will typically be in the format:
+## ✨ Points clés
+
+- **🚀 Rapidité** : un process cadré, délai garanti 48h  
+- **📷 Qualité** : shooting photo HD + vidéo (option drone)  
+- **📝 Simplicité** : annonce prête à publier, texte clair et cohérent  
+- **⚡ Efficacité** : un interlocuteur unique, un pack complet  
+
+---
+
+## 🌐 Site vitrine
+
+Ce dépôt contient le **site web officiel de R2S**, présentant :  
+
+- Le **concept** en 4 étapes claires  
+- Les **packs d’offres** (Express, Premium, Pro)  
+- Un **comparateur Avant/Après** interactif  
+- Une **galerie photo/vidéo**  
+- Un **générateur d’annonce automatisé**  
+- Une **section contact & devis**  
+
+---
+
+## 🛠️ Technologies utilisées
+
+- **Frontend** : HTML5, CSS3, JavaScript (vanilla)  
+- **Framework CSS** : Tailwind CSS (CDN)  
+- **UI/UX** : design responsive, composants modernes, slider interactif  
+- **Déploiement** : hébergement statique (Netlify / Vercel / GitHub Pages / OVH)  
+
+---
+
+## 📂 Structure du projet
+
 ```
-https://<username>.github.io/<repository-name>/
-```
-For example, if your GitHub username is `johnDoe` and your repository is named `my-html-project`, your site would be accessible at:
-```
-https://johnDoe.github.io/my-html-project/
+.
+├── index.html        # Site vitrine complet
+├── logo.png          # Logo officiel
+└── /assets           # Ressources (images, vidéos, icônes…)
 ```
 
-### Step 6: Update Your Project
-Whenever you want to update your project:
-1. Make changes to your files locally.
-2. Commit and push the changes to your GitHub repository.
-3. Your GitHub Pages site will automatically update with the latest changes.
+---
 
-### Additional Tips
-- **Custom Domain**: If you want to use a custom domain, you can set that up in the GitHub Pages settings.
-- **Index File**: Ensure you have an `index.html` file in your repository, as this is the default file that GitHub Pages will serve.
-- **Check for Errors**: If your site doesn’t appear, check the repository settings and ensure that the correct branch and folder are selected for GitHub Pages.
+## 📸 Aperçu
 
-By following these steps, you should be able to successfully host your HTML project on GitHub Pages!
+_(À insérer : capture d’écran du site ou GIF du slider Avant/Après)_
+
+---
+
+## 👥 L’équipe fondatrice
+
+- **Leo** — Drone, Process, Planification  
+- **Kristian** — Manager, Communication visuelle, Shooting & Montage  
+- **Anicet** — Communication, Relation client, Services après-vente  
+- **Alban** — Technique & support  
+
+---
+
+## 📞 Contact
+
+📧 contact@r2s-sas.fr  
+🌐 [r2s-sas.fr](https://r2s-sas.fr)  
+
+---
+
+## 📄 Licence
+
+© 2025 **R2S SAS** — Tous droits réservés  
