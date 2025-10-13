@@ -51,7 +51,7 @@ Ce dépôt contient le **site web officiel de R2S**, présentant :
 ## 📸 Aperçu
 
 
-![Aperçu du site R2S](demo.gif)
+![Aperçu du site R2S](demo.mp4)
 
 ---
 
