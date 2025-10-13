@@ -50,7 +50,8 @@ Ce dépôt contient le **site web officiel de R2S**, présentant :
 
 ## 📸 Aperçu
 
-_(À insérer : capture d’écran du site ou GIF du slider Avant/Après)_
+
+![Aperçu du site R2S](demo.gif)
 
 ---
 
