@@ -33,7 +33,7 @@ Ce dépôt contient le **site web officiel de R2S**, présentant :
 - **Frontend** : HTML5, CSS3, JavaScript (vanilla)  
 - **Framework CSS** : Tailwind CSS (CDN)  
 - **UI/UX** : design responsive, composants modernes, slider interactif  
-- **Déploiement** : hébergement statique (Netlify / Vercel / GitHub Pages / OVH)  
+- **Déploiement** : hébergement statique (GitHub Pages)  
 
 ---
 
