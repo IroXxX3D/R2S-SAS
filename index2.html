@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>R2S SAS — Site en maintenance</title>
+  <meta name="description" content="Notre site est actuellement en cours d'amélioration. Nous revenons très bientôt." />
+  
+  <link rel="icon" type="image/x-icon" href="logo.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #15242F; /* bleu foncé */
+      --beige: #F7F3ED;   /* beige */
+      --accent: #F15C05;  /* orange */
+      --muted: rgba(21, 36, 47, 0.65);
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      font-weight: 600;
+      background-color: var(--beige);
+      color: var(--primary);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 600px;
+      padding: 40px;
+      background-color: #ffffff;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 40px rgba(21, 36, 47, 0.1);
+      border: 1px solid rgba(21, 36, 47, 0.08);
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-weight: 800;
+      font-size: 2rem;
+      line-height: 1.2;
+      color: var(--primary);
+      margin: 0 0 16px 0;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin: 0 0 24px 0;
+    }
+
+    .contact-info {
+      margin-top: 32px;
+      border-top: 1px solid rgba(21, 36, 47, 0.1);
+      padding-top: 24px;
+    }
+    
+    .contact-info p {
+        font-size: 1rem;
+        margin-bottom: 16px;
+    }
+
+    .contact-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.2s ease;
+    }
+
+    .contact-links a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .socials {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 20px;
+    }
+
+    .socials a {
+        opacity: 0.8;
+        transition: opacity 0.2s ease;
+    }
+
+    .socials a:hover {
+        opacity: 1;
+    }
+    
+    .socials img {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Animation subtile pour l'icône */
+    .icon {
+        font-size: 2rem;
+        animation: pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+    <img src="Assets/logo.png" alt="Logo R2S SAS" class="logo" />
+    
+    <div class="icon" aria-hidden="true">🛠️</div>
+
+    <h1>Site en cours d'amélioration</h1>
+    <p>
+      Nous mettons à jour notre site pour vous offrir une meilleure expérience.
+      L'accès sera rétabli dans les plus brefs délais. Merci pour votre patience !
+    </p>
+
+    <div class="contact-info">
+        <p>En cas d'urgence ou pour toute demande de devis, vous pouvez nous joindre directement :</p>
+        <div class="contact-links">
+            Par email : <a href="mailto:support@r2s-sas.fr">support@r2s-sas.fr</a>
+            <br>
+            Par téléphone : <a href="tel:0681370770">06 81 37 07 70</a>
+        </div>
+        <div class="socials">
+            <a href="https://www.instagram.com/lumicardetailing" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <img src="Assets/Linkedin.png" alt="LinkedIn">
+            </a>
+        </div>
+    </div>
+  </main>
+
+</body>
+
+</html>
