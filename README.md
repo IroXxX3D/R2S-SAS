@@ -22,8 +22,7 @@ Ce dépôt contient le **site web officiel de R2S**, présentant :
 - Le **concept** en 4 étapes claires  
 - Les **packs d’offres** (Express, Premium, Pro)  
 - Un **comparateur Avant/Après** interactif  
-- Une **galerie photo/vidéo**  
-- Un **générateur d’annonce automatisé**  
+- Une **galerie photo/vidéo** 
 - Une **section contact & devis**  
 
 ---
